@@ -43,6 +43,7 @@ CREATE TABLE trainings (
     notes TEXT,
     total_volume DECIMAL(10,2) DEFAULT 0,
     peak_weight DECIMAL(8,2) DEFAULT 0,
+    fatigue_level INTEGER DEFAULT 6 CHECK (fatigue_level >= 1 AND fatigue_level <= 10),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
@@ -176,6 +177,7 @@ pub struct Training {
     pub notes: Option<String>,
     pub total_volume: Decimal,
     pub peak_weight: Decimal,
+    pub fatigue_level: i32,
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
 }

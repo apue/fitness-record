@@ -208,6 +208,7 @@ Authorization: Bearer <token>
 {
   "date": "2024-01-01",
   "notes": "string",
+  "fatigue_level": 7,
   "exercises": [
     {
       "name": "坐姿划船",
@@ -233,6 +234,7 @@ Authorization: Bearer <token>
       "notes": "string",
       "total_volume": 1800.0,
       "peak_weight": 50.0,
+      "fatigue_level": 7,
       "exercises": [],
       "created_at": "2024-01-01T00:00:00Z"
     }
@@ -268,6 +270,7 @@ Authorization: Bearer <token>
         "notes": "string",
         "total_volume": 1800.0,
         "peak_weight": 50.0,
+        "fatigue_level": 7,
         "exercise_count": 3,
         "created_at": "2024-01-01T00:00:00Z"
       }
@@ -296,12 +299,13 @@ Authorization: Bearer <token>
   "success": true,
   "data": {
     "training": {
-      "id": "uuid",
-      "date": "2024-01-01",
-      "notes": "string",
-      "total_volume": 1800.0,
-      "peak_weight": 50.0,
-      "exercises": [
+              "id": "uuid",
+        "date": "2024-01-01",
+        "notes": "string",
+        "total_volume": 1800.0,
+        "peak_weight": 50.0,
+        "fatigue_level": 7,
+        "exercises": [
         {
           "id": "uuid",
           "name": "坐姿划船",
@@ -331,6 +335,7 @@ Authorization: Bearer <token>
 {
   "date": "2024-01-01",
   "notes": "string",
+  "fatigue_level": 7,
   "exercises": []
 }
 ```
@@ -385,6 +390,7 @@ Authorization: Bearer <token>
     "total_volume": 27000.0,
     "average_volume": 1800.0,
     "peak_weight": 80.0,
+    "average_fatigue_level": 6.8,
     "most_used_exercise": "坐姿划船",
     "training_frequency": {
       "weekly": 3.5,
@@ -417,6 +423,7 @@ Authorization: Bearer <token>
         "date": "2024-01-01",
         "volume": 1800.0,
         "peak_weight": 50.0,
+        "fatigue_level": 7,
         "training_count": 1
       }
     ]

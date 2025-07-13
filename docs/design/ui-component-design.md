@@ -221,6 +221,19 @@
             <textarea id="trainingNotes" name="notes" rows="3"></textarea>
         </div>
         
+        <div class="form-group">
+            <label for="fatigueLevel">疲劳度评分 (1-10分)</label>
+            <div class="fatigue-rating">
+                <input type="range" id="fatigueLevel" name="fatigue_level" min="1" max="10" value="6" class="fatigue-slider">
+                <div class="fatigue-labels">
+                    <span class="fatigue-label">1 (很轻松)</span>
+                    <span class="fatigue-label">6 (适中)</span>
+                    <span class="fatigue-label">10 (很累)</span>
+                </div>
+                <span class="fatigue-value" id="fatigueValue">6</span>
+            </div>
+        </div>
+        
         <div class="exercises-section">
             <h4>训练项目</h4>
             <div class="exercises-list" id="exercisesList">
@@ -297,6 +310,10 @@
                 <span class="stat-label">峰值</span>
                 <span class="stat-value">50 kg</span>
             </div>
+            <div class="stat-item">
+                <span class="stat-label">疲劳度</span>
+                <span class="stat-value fatigue-display">7/10</span>
+            </div>
         </div>
     </div>
     
@@ -361,6 +378,16 @@
         <div class="stat-content">
             <h3 class="stat-value">3.5</h3>
             <p class="stat-label">周训练频率</p>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-icon">
+            <svg class="icon"><!-- 疲劳度图标 --></svg>
+        </div>
+        <div class="stat-content">
+            <h3 class="stat-value">6.8</h3>
+            <p class="stat-label">平均疲劳度</p>
         </div>
     </div>
 </div>
@@ -450,6 +477,60 @@
 .btn {
     min-height: 44px;
     padding: var(--spacing-3) var(--spacing-4);
+}
+
+/* 疲劳度评分组件 */
+.fatigue-rating {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.fatigue-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--gray-200);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.fatigue-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+}
+
+.fatigue-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    border: none;
+}
+
+.fatigue-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-xs);
+    color: var(--gray-600);
+}
+
+.fatigue-value {
+    text-align: center;
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.fatigue-display {
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 /* 移动端表单优化 */
