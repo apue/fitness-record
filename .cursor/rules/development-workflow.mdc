@@ -1,0 +1,29 @@
+# 开发工作流程规范
+
+## 分支管理
+- 保持main分支干净且随时可部署
+- 所有代码改动必须创建正确的功能分支
+- 分支命名规范：`feature/功能描述` 或 `fix/问题描述`
+- 编译通过后通过PR合并到main分支
+- Code Review完成后合入main，删除功能分支
+
+## 代码质量
+- 代码要符合业界最佳实践
+- 考虑到小规模（人+AI工具协同开发）团队特点，不要特别复杂
+- 如果遇到编译错误则主动尝试修复
+- 如果修复两次还不能编译通过，则必须和人交流，达成共识后才能继续修改
+
+## 部署流程
+- 在本地通过shuttle命令行工具部署到shuttle服务端
+- 部署前确保本地编译通过
+- 部署后验证功能正常
+
+## 项目结构
+- 主要配置文件：[Cargo.toml](mdc:Cargo.toml)
+- Shuttle部署配置：[Shuttle.toml](mdc:Shuttle.toml)
+- 源代码目录：[src/](mdc:src/)
+- 静态资源目录：[static/](mdc:static/)
+description:
+globs:
+alwaysApply: false
+---

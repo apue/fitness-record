@@ -1,0 +1,42 @@
+# Rust编码规范
+
+## 代码风格
+- 遵循Rust官方编码规范
+- 使用`cargo fmt`格式化代码
+- 使用`cargo clippy`进行代码检查
+- 变量和函数命名使用snake_case
+- 常量使用SCREAMING_SNAKE_CASE
+
+## 错误处理
+- 优先使用`Result<T, E>`而不是panic
+- 合理使用`?`操作符进行错误传播
+- 为自定义错误类型实现`std::error::Error`
+- 提供有意义的错误信息
+
+## 性能优化
+- 避免不必要的克隆和分配
+- 合理使用引用和借用
+- 考虑使用`Arc`和`Mutex`进行并发
+- 使用`cargo bench`进行性能测试
+
+## 测试规范
+- 单元测试放在`mod tests`模块中
+- 集成测试放在`tests/`目录
+- 测试函数命名清晰，描述测试场景
+- 使用`#[cfg(test)]`标记测试代码
+
+## 依赖管理
+- 在[Cargo.toml](mdc:Cargo.toml)中明确指定依赖版本
+- 定期更新依赖，注意兼容性
+- 使用`cargo audit`检查安全漏洞
+- 避免过度依赖，保持依赖树简洁
+
+## 项目结构
+- 主要入口：[src/main.rs](mdc:src/main.rs)
+- 模块组织清晰，职责单一
+- 使用`pub`控制模块可见性
+- 合理使用`use`语句导入模块
+description:
+globs:
+alwaysApply: false
+---
